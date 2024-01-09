@@ -1,0 +1,6 @@
+{
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    "inlineChat.mode": "livePreview",
+    "inlineChat.showDiff": true,
+    "liveServer.settings.host": "192.168.10.4"
+}
