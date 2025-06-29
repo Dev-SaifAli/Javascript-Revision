@@ -11,7 +11,6 @@ const clearStatement = () => {
 
 // ---------------
 
-
 let string = "Saif Ali Qadri";
 
 // Alert string
@@ -74,4 +73,33 @@ document.getElementById("sum").onclick = function () {
     "<h4><code>let num1 =15; <br>let num2 = 10;<br>let sum = num1+num2;<br></code></h4>";
   document.getElementById("statement").innerHTML = statement;
   document.getElementById("output").innerHTML = sum;
+};
+
+document.getElementById("subtract").onclick = function () {
+  let num1 = 15;
+  let num2 = 10;
+  let subtract = num1 - num2;
+  let statement =
+    "<h4><code>let num1 = 15; <br>let num2 = 10;<br>let sum = num1-num2;<br></code></h4>";
+  document.getElementById("statement").innerHTML = statement;
+  document.getElementById("output").innerHTML = subtract;
+};
+
+document.getElementById("multiply").onclick = function () {
+  let num1 = 15;
+  let num2 = 10;
+  let multiply = num1 * num2;
+  let statement =
+    "<h4><code>let num1 = 15; <br>let num2 = 10;<br>let sum = num1*num2;<br></code></h4>";
+  document.getElementById("statement").innerHTML = statement;
+  document.getElementById("output").innerHTML = multiply;
+};
+document.getElementById("division").onclick = function () {
+  let num1 = 15;
+  let num2 = 3;
+  let division = num1 / num2;
+  let statement =
+    "<h4><code>let num1 = 15; <br>let num2 = 10;<br>let sum = num1/num2;<br></code></h4>";
+  document.getElementById("statement").innerHTML = statement;
+  document.getElementById("output").innerHTML = division;
 };
