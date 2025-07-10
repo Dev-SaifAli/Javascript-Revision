@@ -60,14 +60,15 @@
                     <div class="col-6">
                         <h3 class="text-center">Input</h3>
                         <div class="input-group border border-secondary rounded-3 p-4 h-75">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control fs-4" id="input-box">
                             <button class="btn btn-outline-secondary" type="button"
-                                id="inputGroupFileAddon04">Clear</button>
+                                onclick="clearInput();">Clear</button>
                         </div>
                     </div>
                     <div class="col-6">
                         <h3 class="text-center">Original String</h3>
-                        <div class="rounded-3 bg-dark p-4 text-white h-75 d-flex flex-wrap gap-2 justify-content-center ">
+                        <div
+                            class="rounded-3 bg-dark p-4 text-white h-75 d-flex flex-wrap gap-3 justify-content-center fs-5">
                             <span>1) Faisalabad</span>
                             <span>2) Karachi</span>
                             <span>3) Lahore</span>
@@ -75,67 +76,53 @@
                             <span>5) Islamabad</span>
                             <span>6) Burewala</span>
                             <span>7) Kashmir</span>
-                            
+
                         </div>
                     </div>
+
+
+
+                </div>
+
+
+                <div class=" row py-4">
                     <!-- buttons -->
-                    <!-- <div class="col-6">
+                    <div class="col-6">
                         <h4 class="text-center">Buttons</h4>
                         <div class="border border-secondary rounded-3 p-4 text-center">
-                            <button class="btn btn-danger" id="concatenate">Concatenate some strings</button>
-                            <button class="btn btn-danger"
-                                onclick="concatenateStrings('Stay calm and blessed ☺️ ', 'Saifu' )">Concatenate
-                                strings</button>
-                            <button class="btn btn-danger" id="askNameFromUser">Ask Name from User</button>
+                            <button class="btn btn-danger" onclick="simpleAlert();">Simple Alert</button>
+                            <button class="btn btn-danger" onclick="printName();">Print my name</button>
+                            <button class="btn btn-danger" onclick="printCities();">Print All Cities</button>
                             <br> <br>
                             <button class="btn btn-danger" id="comparisonOperators">Comparison Operators</button>
                             <button class=" btn btn-danger" id="ifelseif">if else if</button>
-                            <button class=" btn btn-danger" id="testingSetOfConditions">Testing set of
-                                conditions</button>
-                            <button class=" btn btn-danger" id="ifNestedStatement">If Nested Statement</button>
-                            <button class=" btn btn-danger" id="login">Login</button>
                         </div>
-
-                    </div> -->
-
-
-
-                </div>
-
-
-                <div class=" row mt-2 py-4">
-                    <div class="col-6 text-center">
-                        <h4 class="text-center">Original Statement</h4>
-                        <div class="border border-secondary rounded-3 p-4 d-flex justify-content-center align-items-center"
-                            id="statement" style="height: 155px; "></div>
-                        <button class="btn btn-outline-secondary   mt-4" onclick="clearStatement();">Clear
-                            Statement</button>
-
 
                     </div>
-                </div>
 
-                <div class="row mt-2 py-4 text-center">
-                    <div class="col-12">
+
+                    <div class="col-6 text-center">
                         <h4 class="text-center">Output/Result</h4>
-                        <div class="border border-secondary rounded-3 d-flex justify-content-center align-items-center text-center p-4"
-                            id="output" style="height: 15px;">
-                        </div>
-                        <button class="btn btn-outline-secondary mt-4 " id="output" onclick="clearOutput();">Clear
+                        <div class="border border-secondary rounded-3 p-4 d-flex justify-content-center align-items-center"
+                            id="output-box" ></div>
+                        <button class="btn btn-outline-secondary   mt-4" onclick="clearOutput();">Clear
                             Output</button>
 
 
                     </div>
                 </div>
 
+
             </div>
+
+        </div>
 
         </div>
 
 
     </main>
 
-    <footer class="py-2 bg-dark">
+    <footer class="py-2 bg-dark mt-5">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -147,6 +134,7 @@
     <!-- Custom JS -->
 
     <script src="./JS/script.js"></script>
+
 
 
 
