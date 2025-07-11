@@ -29,25 +29,50 @@ function printName() {
 }
 
 // print cities
+let cities = [
+  "Faisalabad",
+  "Karachi",
+  "Lahore",
+  "Multan",
+  "Islamabad",
+  "Burewala",
+  "Kashmir",
+];
 
 // console.log('cities :>> ', cities);
 function printCities() {
   clearOutput();
   clearInput();
-  let cities = [
-    "Faisalabad",
-    "Karachi",
-    "Lahore",
-    "Multan",
-    "Islamabad",
-    "Burewala",
-    "Kashmir",
-  ];
 
   for (let i = 0; i < cities.length; i++) {
     // console.log("cities :>> ", cities[i]);
     let num = i + 1;
     document.getElementById("output-box").innerHTML +=
       num + ")" + cities[i] + "<br/>";
+  }
+}
+// add city
+function addCity() {
+  let city = document.getElementById("input-box").value;
+  if (!city) {
+    alert("Please enter city name.");
+  }
+  cities.push(city);
+  console.log("cities :>> ", cities);
+}
+
+// generate table
+function generateTable() {
+  // let num = +prompt('Enter a number');
+  let num = parseInt(document.getElementById("input-box").value);
+  if (!num) {
+    alert("please enter number..");
+    return;
+  }
+  // clearOutput();
+  for (let i = 1; i <= 10; i++) {
+    document.getElementById("output-box").innerHTML += `${num} * ${i} = ${
+      num * i
+    } <br/>`;
   }
 }
