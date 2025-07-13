@@ -62,12 +62,12 @@
                         <div class="input-group border border-secondary rounded-3 p-4 h-100">
                             <input type="text" class="form-control fs-4" id="input-box">
                             <button class="btn btn-outline-secondary" type="button"
-                                onclick="clearInput();" >Clear</button>
+                                onclick="clearInput();">Clear</button>
                         </div>
                     </div>
                     <div class="col-6">
                         <h3 class="text-center">Original String</h3>
-                        <div class="rounded-3 bg-dark p-4 text-white h-100 text-center fs-5" id="originalString">
+                        <div class="rounded-3 bg-dark p-4 text-white h-100 text-center fs-5  " id="originalString">
                         </div>
                     </div>
 
@@ -79,21 +79,27 @@
                 <!-- buttons -->
                 <div class=" row py-4">
 
-                    <div class="col-md-6 border-secondary border rounded-3 p-4">
-                        <div class="d-grid gap-2 d-md-block text-center">
+
+                    <div class="col-md-6 ">
+                        <h4 class="text-center">Buttons</h4>
+
+                        <div class="d-grid gap-2 d-md-block text-center border-secondary border rounded-3 p-4 h-100" >
 
                             <div class="row mb-2">
                                 <div class="col-6">
-                                    <button class="btn btn-danger w-100" onclick="lowerCase();">Convert to Lowercase</button>
+                                    <button class="btn btn-danger w-100" onclick="lowerCase();">Convert to
+                                        Lowercase</button>
                                 </div>
                                 <div class="col-6">
-                                    <button class="btn btn-danger w-100">Convert to Uppercase</button>
+                                    <button class="btn btn-danger w-100" onclick="upperCase();">Convert to
+                                        Uppercase</button>
                                 </div>
                             </div>
 
                             <div class="row mb-2">
                                 <div class="col-6">
-                                    <button class="btn btn-danger w-100">Convert to Capitalize</button>
+                                    <button class="btn btn-danger w-100" onclick="capitalize();">Convert to
+                                        Capitalize</button>
                                 </div>
                                 <div class="col-6">
                                     <button class="btn btn-danger w-100">Better Formatting</button>
@@ -131,7 +137,7 @@
 
                     <div class="col-6 text-center">
                         <h4 class="text-center">Output/Result</h4>
-                        <div class="border border-secondary rounded-3 p-4 d-flex justify-content-center align-items-center"
+                        <div class="border border-secondary rounded-3 p-4 d-flex justify-content-center align-items-center fs-4 h-100"
                             id="output-box"></div>
                         <button class="btn btn-outline-secondary   mt-4" onclick="clearOutput();">Clear
                             Output</button>

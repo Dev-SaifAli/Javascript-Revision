@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden; /* hides scrollbar */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+footer {
+  flex-shrink: 0;
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto; /* scroll only inside main if needed */
+}

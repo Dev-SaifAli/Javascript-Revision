@@ -57,11 +57,24 @@ document.getElementById("originalString").innerHTML = originalText;
 // lowerCase
 
 function lowerCase() {
-    clearOutput();
+  clearOutput();
   //   clearInput();
   document.getElementById("output-box").innerHTML = originalText.toLowerCase();
-//   let value = inputValue();
-//   document.getElementById("output-box").innerHTML += value.toLowerCase();
+  //   let value = inputValue();
+  //   document.getElementById("output-box").innerHTML += value.toLowerCase();
 }
 
+// upperCase
 
+function upperCase() {
+  clearOutput();
+  document.getElementById("output-box").innerHTML = originalText.toUpperCase();
+}
+
+// capitalize
+
+function capitalize() {
+  clearOutput();
+  document.getElementById("output-box").innerHTML =
+    '<span style="text-transform: capitalize;">' + originalText + "</span>";
+}
