@@ -67,14 +67,46 @@ function lowerCase() {
 // upperCase
 
 function upperCase() {
-  clearOutput();
+  // clearOutput();
   document.getElementById("output-box").innerHTML = originalText.toUpperCase();
 }
 
 // capitalize
 
 function capitalize() {
-  clearOutput();
+  // clearOutput();
   document.getElementById("output-box").innerHTML =
     '<span style="text-transform: capitalize;">' + originalText + "</span>";
+}
+
+// better formatting
+function betterFormatting() {
+  let text = inputValue();
+  if (text === "") {
+    alert("Please enter your name.");
+    return;
+  }
+  let lowerCaseText = text.toLowerCase();
+
+  document.getElementById("output-box").innerHTML =
+    '<span style="text-transform: capitalize;">' + lowerCaseText + "</span>";
+}
+
+// print all cities
+
+let cities = [
+  "Faisalabad",
+  "Lahore",
+  "Islamabad",
+  "Karachi",
+  "Multan",
+  "Peshawar",
+  "Quetta",
+];
+function printCities() {
+  cities.forEach(function (city, index) {
+    document.getElementById("output-box").innerHTML += `${
+      index + 1
+    }) ${city} </br>`;
+  });
 }
