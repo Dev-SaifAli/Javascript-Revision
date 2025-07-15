@@ -104,9 +104,105 @@ let cities = [
   "Quetta",
 ];
 function printCities() {
+  clearOutput();
   cities.forEach(function (city, index) {
     document.getElementById("output-box").innerHTML += `${
       index + 1
     }) ${city} </br>`;
   });
+}
+
+//add city in the list
+
+// function addCity() {
+//   let newCity = inputValue().toLowerCase();
+//   if (!newCity) {
+//     alert("Please enter city name.");
+//     return;
+//   }
+//   // check for city in list
+//   let cityExists = cities.some(function (city) {
+//     return city.toLowerCase() === newCity;
+//   });
+//   if (cityExists) {
+//     // alert("City already exists in the list.");
+//     document.getElementById("output-box").innerHTML =
+//       '<span class="text-danger fw-bold">' +
+//       newCity +
+//       "</span>  already exists in the list.";
+
+//     return;
+//   }
+
+//   cities.push(newCity.charAt(0).toUpperCase() + newCity.slice(1));
+//   document.getElementById("output-box").innerHTML = document.getElementById(
+//     "output-box"
+//   ).innerHTML =
+//     '<span class="text-success fw-bold">' +
+//     newCity +
+//     "</span>  added into the list.";
+// }
+
+function addCity() {
+  let newCity = inputValue();
+
+  if (!newCity) {
+    alert("Please enter city name.");
+    return;
+  }
+
+  let cityFirstLetter = newCity.slice(0, 1).toUpperCase();
+  let cityAllLetters = newCity.slice(1).toLowerCase();
+  let cityWordInCapitalize = cityFirstLetter + cityAllLetters;
+  console.log("cityWordInCapitalize :>> ", cityWordInCapitalize);
+
+  let cityFound = false;
+
+  for (let i = 0; i < cities.length; i++) {
+    if (cityWordInCapitalize === cities[i]) cityFound = true;
+    document.getElementById("output-box").innerHTML =
+      '<span class="text-danger fw-bold">"' +
+      cityWordInCapitalize +
+      '" </span> already exists in the list.';
+  }
+  if (cityFound === false) {
+    cities.push(cityWordInCapitalize);
+    document.getElementById("output-box").innerHTML =
+      '<span class="text-success fw-bold">"' +
+      cityWordInCapitalize +
+      '" </span> added into the list.';
+  }
+}
+
+// check City
+
+function checkCity() {
+  let newCity = inputValue();
+
+  if (!newCity) {
+    alert("Please enter city name.");
+    return;
+  }
+
+  let cityFirstLetter = newCity.slice(0, 1).toUpperCase();
+  let cityAllLetters = newCity.slice(1).toLowerCase();
+  let cityWordInCapitalize = cityFirstLetter + cityAllLetters;
+  console.log("cityWordInCapitalize :>> ", cityWordInCapitalize);
+
+  let cityFound = false;
+
+  for (let i = 0; i < cities.length; i++) {
+    if (cityWordInCapitalize === cities[i]) cityFound = true;
+    document.getElementById("output-box").innerHTML =
+      '<span class="text-success fw-bold ">"' +
+      cityWordInCapitalize +
+      '" </span> found in the list. &#128151';
+  }
+  if (cityFound === false) {
+    // cities.push(cityWordInCapitalize);
+    document.getElementById("output-box").innerHTML =
+      'SORRY &#128154; we couldn\'t find your city <span class="text-danger fw-bold">"' +
+      cityWordInCapitalize +
+      '"</span> in the list. </br> Click <span class="text-success fw-bold">"Add your city in List"</span> to add your city.';
+  }
 }

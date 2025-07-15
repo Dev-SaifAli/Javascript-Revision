@@ -7,7 +7,8 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* hides scrollbar */
+  overflow: hidden; 
+  /* hides scrollbar */
 }
 
 body {
