@@ -228,6 +228,6 @@ function findWord() {
     document.getElementById("output-box").innerHTML =
       'Your word <span class="text-danger fs-4">"' +
       word +
-      '"</span> is not found!';
+      '"</span> is not found.';
   }
 }
