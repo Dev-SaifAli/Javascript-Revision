@@ -206,3 +206,18 @@ function checkCity() {
       '"</span> in the list. </br> Click <span class="text-success fw-bold">"Add your city in List"</span> to add your city.';
   }
 }
+
+// find word
+function findWord() {
+  let word = inputValue();
+  if(!word){
+    alert("Please enter the word.")
+    return;
+  }
+  word =  word.toLowerCase();
+  let newOriginalText = originalText.toLowerCase();
+  let findWord =  newOriginalText.indexOf(word);
+  if(!findWord==-1){
+    document.getElementById(output-box).innerHTML = Your <span class = "text-success">"+ word" 
+  }
+}
