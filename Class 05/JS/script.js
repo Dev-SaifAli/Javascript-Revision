@@ -210,14 +210,24 @@ function checkCity() {
 // find word
 function findWord() {
   let word = inputValue();
-  if(!word){
-    alert("Please enter the word.")
+  if (!word) {
+    alert("Please enter the word.");
     return;
   }
-  word =  word.toLowerCase();
+  word = word.toLowerCase();
   let newOriginalText = originalText.toLowerCase();
-  let findWord =  newOriginalText.indexOf(word);
-  if(!findWord==-1){
-    document.getElementById(output-box).innerHTML = Your <span class = "text-success">"+ word" 
+  let findWord = newOriginalText.indexOf(word);
+  console.log("findWord :>> ", findWord);
+  if (findWord !== -1) {
+    document.getElementById("output-box").innerHTML =
+      'Your word <span class="text-success fs-4">"' +
+      word +
+      '"</span> found at index ' +
+      findWord;
+  } else {
+    document.getElementById("output-box").innerHTML =
+      'Your word <span class="text-danger fs-4">"' +
+      word +
+      '"</span> is not found!';
   }
 }
