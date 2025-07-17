@@ -231,3 +231,30 @@ function findWord() {
       '"</span> is not found.';
   }
 }
+
+// replace word
+
+function replaceWord() {
+  let newOriginalText = originalText.toLowerCase();
+  let word = inputValue();
+  if (!word) {
+    alert("Please type the word for replacing.");
+    return;
+  }
+  let replaceWith = prompt("Enter a word that you wanted to replace with.");
+  if (!replaceWith) {
+    alert(
+      "Please type a word that you wanted to replace it with " + word + "."
+    );
+    return;
+  }
+  console.log("replaceWith :>> ", replaceWith);
+
+  word = word.toLowerCase();
+
+  // word = new RegExp(word, "g"); GLOBALLY SELECT ALL WORDS OR USED
+
+  replaceWith = replaceWith.toLowerCase();
+  let replaceWord = newOriginalText.replaceAll(word, replaceWith); // REPLACE ALL Method to replace all the words.
+  document.getElementById("output-box").innerHTML = replaceWord;
+}
