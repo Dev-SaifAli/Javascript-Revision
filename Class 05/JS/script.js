@@ -258,3 +258,7 @@ function replaceWord() {
   let replaceWord = newOriginalText.replaceAll(word, replaceWith); // REPLACE ALL Method to replace all the words.
   document.getElementById("output-box").innerHTML = replaceWord;
 }
+// use case of replaceWord
+let cnic = "33102-3601050-1";
+let replaceCNIC = cnic.replaceAll("-", "");
+console.log("replaceWord :>> ", replaceCNIC);
