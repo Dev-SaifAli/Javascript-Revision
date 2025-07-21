@@ -32,7 +32,7 @@ function round() {
       position: "right", // `left`, `center` or `right`
       stopOnFocus: true, // Prevents dismissing of toast on hover
       style: {
-        background: "linear-gradient(to right, #00b09b, #96c93d)",
+        background: "linear-gradient(to right, #314341ff, #1a1c18ff)",
       },
       onClick: function () {}, // Callback after click
     }).showToast();
@@ -41,4 +41,60 @@ function round() {
 
   let roundNumber = Math.round(number);
   showOutput(roundNumber);
+}
+
+// ceil a number
+function ceil() {
+  let number = inputValue();
+  if (!number) {
+    Toastify({
+      text: "Please enter a number",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #314341ff, #1a1c18ff)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+    return;
+  }
+
+  let ceilNumber = Math.ceil(number);
+  showOutput(ceilNumber);
+}
+// floor a number
+
+function floor() {
+  let number = inputValue();
+  if (!number) {
+    Toastify({
+      text: "Please enter a number",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+    return;
+  }
+
+  let floorNumber = Math.floor(number);
+  showOutput(floorNumber);
+}
+
+// random number
+function random() {
+  let randomNumber = Math.random();
+  showOutput(randomNumber);
 }
