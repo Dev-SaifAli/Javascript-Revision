@@ -98,3 +98,13 @@ function random() {
   let randomNumber = Math.random();
   showOutput(randomNumber);
 }
+
+// dice
+
+function dice() {
+  let randomNumber = Math.random();
+  randomNumber = randomNumber * 6 + 1;
+  let dice = Math.floor(randomNumber);
+  let html = "<h1>" + dice + "</h1><span>Generating a number from 1-6</span>";
+  showOutput(html);
+}
