@@ -108,3 +108,30 @@ function dice() {
   let html = "<h1>" + dice + "</h1><span>Generating a number from 1-6</span>";
   showOutput(html);
 }
+
+// random string
+
+function randomString() {
+  let randomString = "";
+  let upperCaseAlphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let lowerCaseAlphabets = upperCaseAlphabets.toLowerCase();
+  let numbers = "0123456789";
+  let symbols = `\`~!@#$%^&*()_-+"'?/`;
+  let possibleString =
+    upperCaseAlphabets + lowerCaseAlphabets + numbers + symbols;
+  // console.log('possibleString :>> ', possibleString);
+
+  let limit = 16; // defines the length of the string
+  for (i = 0; i < limit; i++) {
+    let randomNumber = Math.random();
+    randomString += possibleString.charAt(
+      Math.floor(randomNumber * possibleString.length)
+    );
+  }
+
+  let html =
+    "<h6>" +
+    randomString +
+    "</h6><span>Generating random string of length 16</span>";
+  showOutput(html);
+}
