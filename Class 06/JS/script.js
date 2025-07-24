@@ -121,7 +121,25 @@ function randomString() {
     upperCaseAlphabets + lowerCaseAlphabets + numbers + symbols;
   // console.log('possibleString :>> ', possibleString);
 
-  let limit = 16; // defines the length of the string
+  // let limit = 16; // defines the length of the string
+  let limit = inputValue();
+  if (!limit) {
+    Toastify({
+      text: "Please enter the length of string.",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #314341ff, #1a1c18ff)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+    return;
+  }
   for (i = 0; i < limit; i++) {
     let randomNumber = Math.random();
     randomString += possibleString.charAt(
@@ -132,6 +150,12 @@ function randomString() {
   let html =
     "<h6>" +
     randomString +
-    "</h6><span>Generating random string of length 16</span>";
+    '</h6> Generating random string & the length is <span class="text-danger">' +
+    limit +
+    "</span>";
+
   showOutput(html);
 }
+
+let randomPassword = Math.random().toString(36).slice(3);
+console.log("randomPassword :>> ", randomPassword); // llx1vvq6ut
