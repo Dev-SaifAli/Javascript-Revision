@@ -159,3 +159,30 @@ function randomString() {
 
 let randomPassword = Math.random().toString(36).slice(3);
 console.log("randomPassword :>> ", randomPassword); // llx1vvq6ut
+
+//controlling length
+
+function controllingLength() {
+  let num = "25.55";
+  console.log("num :>> ", num);
+  console.log("typeof(num) :>> ", typeof num);
+
+  num = parseInt(num);
+  console.log("num :>> ", num);
+  console.log("typeof(num) :>> ", typeof num);
+
+  let num1 = "25.88";
+  num1 = parseFloat(num1);
+  console.log("num :>> ", num1);
+  console.log("typeof(num) :>> ", typeof num1);
+
+  let num2 = "30.55";
+  num2 = Number(num2);
+  console.log("num :>> ", num2);
+  console.log("typeof(num) :>> ", typeof num2);
+
+  num2 = num2.toFixed(1); // it again convert into string
+  num2 = Number(num2)
+  console.log("num :>> ", num2);
+  console.log("typeof(num) :>> ", typeof num2);
+}
