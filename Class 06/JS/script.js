@@ -182,7 +182,55 @@ function controllingLength() {
   console.log("typeof(num) :>> ", typeof num2);
 
   num2 = num2.toFixed(1); // it again convert into string
-  num2 = Number(num2)
+  num2 = Number(num2);
   console.log("num :>> ", num2);
   console.log("typeof(num) :>> ", typeof num2);
+}
+
+function calculateGST() {
+  let cost = inputValue();
+  if (!cost) {
+    Toastify({
+      text: "Please enter the cost",
+      duration: 3000,
+      destination: "https://github.com/apvarun/toastify-js",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #314341ff, #1a1c18ff)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
+    return;
+  }
+
+  cost = Number(cost);
+  // console.log('cost :>> ', typeof cost);
+
+  const tax = 17 / 100;
+  let costTax = cost * tax;
+  costTax = costTax.toFixed(2);
+  costTax = Number(costTax);
+  console.log("costTax :>> ", costTax);
+
+  let totalAmount = cost + costTax;
+  totalAmount = Math.round(totalAmount);
+
+  console.log("totalAmount :>> ", totalAmount);
+
+  document.getElementById("output").innerHTML =
+    '<h4>Your total bill = <span class = "fw-bold">' + cost + "</span></h4>";
+
+  document.getElementById("output").innerHTML +=
+    '<h4>Tax 17% = <span class = "fw-bold text-danger">' +
+    costTax +
+    "</span></h4>";
+
+  document.getElementById("output").innerHTML +=
+    '<h4>Total amount including tax = <span class = "fw-bold text-success">' +
+    totalAmount +
+    "</span></h4>";
 }
