@@ -234,3 +234,17 @@ function calculateGST() {
     totalAmount +
     "</span></h4>";
 }
+
+// some calculator functions
+
+let value = "";
+
+const handleAdd = (param) => {
+  value += param;
+  showOutput(value);
+};
+
+const handleEqual = () => {
+  let total = eval(value);
+  showOutput(total);
+};
