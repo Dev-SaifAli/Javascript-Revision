@@ -1,3 +1,5 @@
+document.getElementById("currentTime").innerHTML = new Date();
+
 let rightNow = new Date(); // constructor | data-type is object
 
 setInterval(() => {
@@ -27,6 +29,7 @@ let dayNames = [
 // Get Name of Today
 function getNameOfToday() {
   let rightNow = new Date(); // constructor | data-type is object
+  console.log("rightNow :>> ", rightNow);
   let theDay = rightNow.getDay(); // week days number
   // showOutput(dayName);
   let nameOfToday = dayNames[theDay];
