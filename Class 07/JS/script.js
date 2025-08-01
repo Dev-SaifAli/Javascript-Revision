@@ -1,10 +1,10 @@
 document.getElementById("currentTime").innerHTML = new Date();
 
-let rightNow = new Date(); // constructor | data-type is object
+// let rightNow = new Date(); // constructor | data-type is object
 
-setInterval(() => {
-  console.log("new Date() :>> ", new Date());
-}, 2000);
+// setInterval(() => {
+//   console.log("new Date() :>> ", new Date());
+// }, 2000);
 
 // Clear Date
 const clearDate = () => {
@@ -14,6 +14,11 @@ const clearDate = () => {
 // Show output
 const showOutput = (output) => {
   document.getElementById("output").innerHTML = output;
+};
+
+// Input Date
+const inputDate = () => {
+  return document.getElementById("input-date").value;
 };
 
 let dayNames = [
@@ -34,4 +39,21 @@ function getNameOfToday() {
   // showOutput(dayName);
   let nameOfToday = dayNames[theDay];
   showOutput(nameOfToday);
+}
+
+// Calculate Days Passed
+function calculateDaysPassed() {
+  let today = new Date();
+  let input = inputDate();
+  if (!input) {
+    alert("Please enter your DOB");
+    return;
+  }
+  let dob = new Date(input);
+  // console.log("dob :>> ", dob);
+
+  let passedDays = today.getTime() - dob.getTime();
+
+  passedDays = passedDays / (1000 * 60 * 60 * 24);
+  showOutput(passedDays);
 }
