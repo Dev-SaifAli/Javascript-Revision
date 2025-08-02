@@ -54,6 +54,22 @@ function calculateDaysPassed() {
 
   let passedDays = today.getTime() - dob.getTime();
 
-  passedDays = passedDays / (1000 * 60 * 60 * 24);
+  passedDays = passedDays / (1000 * 60 * 60 * 24 * 365);
   showOutput(passedDays);
+}
+
+// Next Birthday
+function nextBirthday() {
+  let DOB = inputDate();
+  if (!DOB) {
+    alert("invalid input, try again");
+    return;
+  }
+  let nextDOB = new Date(DOB);
+  console.log("nextDOB :>> ", nextDOB);
+  let today = new Date();
+  let daysDifference = nextDOB.getTime() - today.getTime();
+  daysDifference = daysDifference / (1000 * 60 * 60 * 24);
+
+  showOutput(`Your next birthday is in ${Math.floor(daysDifference)} days.✨`);
 }
