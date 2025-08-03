@@ -11,6 +11,11 @@ const clearDate = () => {
   document.getElementById("input-date").value = "";
 };
 
+// Clear Output
+const clearOutput = () => {
+  document.getElementById("output").innerHTML = "";
+};
+
 // Show output
 const showOutput = (output) => {
   document.getElementById("output").innerHTML = output;
@@ -72,4 +77,14 @@ function nextBirthday() {
   daysDifference = daysDifference / (1000 * 60 * 60 * 24);
 
   showOutput(`Your next birthday is in ${Math.floor(daysDifference)} days.✨`);
+}
+
+// Greet User
+
+function greetUser(userName) {
+  showOutput(`${userName}`);
+}
+function greetUserButton() {
+  let userName = prompt(`Enter your name`);
+  greetUser(userName);
 }
