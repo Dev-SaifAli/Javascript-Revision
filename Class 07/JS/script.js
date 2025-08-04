@@ -79,19 +79,6 @@ function nextBirthday() {
   showOutput(`Your next birthday is in ${Math.floor(daysDifference)} days.✨`);
 }
 
-// Greet User
-// greeting | concatenate with userName
-// let greeting = "";
-// let hour = new Date().getHours();
-// // console.log("now :>> ", typeof hour);
-
-// if (hour >= 4 && hour < 12) {
-//   greeting = "Good Morning!";
-// } else if (hour >= 12 && hour <= 18) {
-//   greeting = "Good Afternoon!";
-// } else if (hour >= 19 && hour <= 24) {
-//   greeting = "Good Evening";
-// }
 let greeting = "";
 
 function greetUser(userName, greeting) {
