@@ -1,4 +1,4 @@
-document.getElementById("currentTime").innerHTML = new Date();
+// document.getElementById("currentTime").innerHTML = new Date();
 
 // let rightNow = new Date(); // constructor | data-type is object
 
@@ -80,11 +80,37 @@ function nextBirthday() {
 }
 
 // Greet User
+// greeting | concatenate with userName
+// let greeting = "";
+// let hour = new Date().getHours();
+// // console.log("now :>> ", typeof hour);
 
-function greetUser(userName) {
-  showOutput(`${userName}`);
+// if (hour >= 4 && hour < 12) {
+//   greeting = "Good Morning!";
+// } else if (hour >= 12 && hour <= 18) {
+//   greeting = "Good Afternoon!";
+// } else if (hour >= 19 && hour <= 24) {
+//   greeting = "Good Evening";
+// }
+let greeting = "";
+
+function greetUser(userName, greeting) {
+  showOutput(`${greeting} ${userName}`);
 }
 function greetUserButton() {
   let userName = prompt(`Enter your name`);
-  greetUser(userName);
+  userName = userName.toUpperCase();
+  let hour = new Date().getHours();
+
+  if (hour >= 4 && hour < 12) {
+    greeting = "🌅 Good Morning!";
+  } else if (hour >= 12 && hour < 18) {
+    greeting = "🌞 Good Afternoon!";
+  } else if (hour >= 18 && hour < 22) {
+    greeting = "🌇 Good Evening!";
+  } else {
+    greeting = "🌙 Good Night!";
+  }
+  greetUser(userName, greeting);
+  // console.log("greeting :>> ", greeting);
 }
