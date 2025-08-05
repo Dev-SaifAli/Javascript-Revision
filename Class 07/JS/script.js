@@ -101,3 +101,25 @@ function greetUserButton() {
   greetUser(userName, greeting);
   // console.log("greeting :>> ", greeting);
 }
+
+// Tell Time
+
+function tellTime() {
+  let now = new Date();
+  let theHr = now.getHours();
+  let theMin = now.getMinutes();
+  let theSec = now.getSeconds();
+
+  let time = `You click the button @ ${theHr}:${theMin}:${theSec}`;
+  document.getElementById("output").innerHTML += `${time}<br/>`;
+}
+
+function tellTime1() {
+  tellTime();
+}
+function tellTime2() {
+  tellTime();
+}
+function tellTime3() {
+  tellTime();
+}
