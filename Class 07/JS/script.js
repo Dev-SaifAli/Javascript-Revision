@@ -123,3 +123,17 @@ function tellTime2() {
 function tellTime3() {
   tellTime();
 }
+
+// Calculate Tax btn
+
+function calculateTaxBtn() {
+  let price = +prompt("Enter price.");
+  let taxRate = 17;
+  var Tax = calculateTax(price, taxRate);
+  let html = `Tax : ${Tax}`;
+  showOutput(html);
+}
+function calculateTax(price, taxRate) {
+  var Tax = (price * taxRate) / 100;
+  return Tax;
+}
