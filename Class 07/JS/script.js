@@ -6,6 +6,24 @@
 //   console.log("new Date() :>> ", new Date());
 // }, 2000);
 
+// Toastify
+function showToast(message) {
+  Toastify({
+    text: message,
+    duration: 3000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: "linear-gradient(to right, #ea7312ff, #694611ff)",
+    },
+    onClick: function () {}, // Callback after click
+  }).showToast();
+}
+
 // Clear Date
 const clearDate = () => {
   document.getElementById("input-date").value = "";
@@ -127,13 +145,34 @@ function tellTime3() {
 // Calculate Tax btn
 
 function calculateTaxBtn() {
-  let price = +prompt("Enter price.");
-  let taxRate = 17;
-  var Tax = calculateTax(price, taxRate);
-  let html = `Tax : ${Tax}`;
+  const price = +prompt("Enter price.");
+  if (!price) {
+    showToast("Please enter price");
+    return;
+  }
+  // let taxRate = null;
+  // if (price < 1000) {
+  //   taxRate = 8;
+  // } else {
+  //   taxRate = 17;
+  // }
+
+  const taxRate = price < 1000 ? 8 : 17;
+  const tax = calculateTax(price, taxRate); // function calling
+  // const total = Math.round(calculateTotal(price, tax)); // function call
+  const total = Math.round(price + tax);
+  // console.log("taxRate :>> ", taxRate);
+  // console.log("tax :>> ", tax);
+  let html = `Price: ${price}/- </br> Tax Rate: ${taxRate}/- </br> Tax : ${tax}/- </br> Total : ${total}/- `;
   showOutput(html);
 }
+// declare function
 function calculateTax(price, taxRate) {
-  var Tax = (price * taxRate) / 100;
-  return Tax;
+  var tax = (price * taxRate) / 100;
+  return tax;
 }
+
+// function calculateTotal(price, tax) {
+//   let total = tax + price;
+//   return total;
+// }
