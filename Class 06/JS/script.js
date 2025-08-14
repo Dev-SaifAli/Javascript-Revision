@@ -240,6 +240,7 @@ function calculateGST() {
 let value = "";
 
 const handleAdd = (param) => {
+  
   value += param;
   showOutput(value);
 };
