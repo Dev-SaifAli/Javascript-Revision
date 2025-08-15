@@ -37,3 +37,23 @@ function switchStatement() {
       break;
   }
 }
+
+// do while
+
+// function doWhile() {
+//   do {
+//     let password = +prompt("Enter your password to login");
+//     output.innerHTML = password;
+//   } while (password === 12345);
+// }
+
+function doWhile() {
+  let password; // declare outside so it's accessible in while()
+
+  do {
+    password = +prompt("Enter your password to login");
+    output.innerHTML = password;
+  } while (password !== 12345);
+
+  alert("Access granted");
+}
