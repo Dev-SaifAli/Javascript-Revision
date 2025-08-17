@@ -84,3 +84,12 @@ function guessNumber() {
   } while (userGuessNumber !== randomNumber && attempts < 3);
   alert("Congratulations! You guessed it right!");
 }
+
+// asking name
+function askingName() {
+  do {
+    var userName = prompt("Enter your name");
+    console.log(userName);
+  } while (userName === null || userName === "");
+  output.innerText = userName;
+}
