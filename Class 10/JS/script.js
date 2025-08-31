@@ -97,7 +97,7 @@ function showNotification(message, type) {
   let bgColor;
   switch (type) {
     case "success":
-      bgColor = "linear-gradient(to right, #00b09b, #96c93d)";
+      bgColor = "linear-gradient(to right, #00b09b, #4e6e17ff)";
       break;
     case "error":
       bgColor = "linear-gradient(to right, #b03500ff, #c98c3dff)";
@@ -131,6 +131,8 @@ const getRandomID = () => {
   return Math.random().toString(36).slice(2);
 };
 
+// users data array in the form of objects
+let users = [];
 function handleSubmit() {
   event.preventDefault();
   let firstName = getFieldValue("firstName");
@@ -146,34 +148,64 @@ function handleSubmit() {
 
   if (firstName.length < 3) {
     showNotification("Please enter your first name correctly", "error");
+    return;
   }
   if (lastName.length < 3) {
     showNotification("Please enter your last name correctly", "error");
+    return;
   }
   if (!emailFormat.test(email)) {
     showNotification("Please enter your email correctly", "error");
+    return;
   }
   if (!dob) {
     showNotification("Please enter your date of birth", "error");
+    return;
   }
+
+  // let user = {
+  //   firstName: firstName,
+  //   lastName: lastName,
+  //   email: email,
+  //   dob: dob,
+  // };
+  // if property name has same name as variable name, we use only property name it can fetch and store values from that same name variable
+  let user = {
+    firstName,
+    lastName,
+    email,
+    dob,
+  };
+
+  user.id = getRandomID();
+  user.dateCreated = new Date().getTime();
+
+  users.push(user);
+  showNotification("A new user has been successfully added", "success");
 }
 
-// let user = {
-//   firstName: firstName,
-//   lastName: lastName,
-//   email: email,
-//   dob: dob,
-// };
-// if property name has same name as variable name, we use only property name it can fetch and store values from that same name variable
-let user = {
-  firstName,
-  lastName,
-  email,
-  dob,
-};
+function showTable() {
+  if (users.length < 1) {
+    showNotification("There is no single user", "error");
+  }
+  let tableStartingCode = '<div class="table-responsive"><table class="table">';
+  let tableEndingCode = "</table></div>";
+  let tableHead =
+    '<thead><tr><th scope="col">#</th><th scope="col">First name</th><th scope="col">Last name</th><th scope="col">Email</th><th scope="col">Date of Birth</th><th scope="col">Age</th></tr></thead>';
+  let tableBody = "";
+  for (let i = 0; i < users.length; i++) {
+    tableBody += `<tbody><tr><th scope="row">${i + 1}</th><td>${
+      users[i].firstName
+    }</td><td>${users[i].lastName}</td><td>${users[i].email}</td><td>${
+      users[i].dob
+    }</td><td>$users[i].age</td></tr></tbody>`;
+  }
 
-user.id = getRandomID();
-user.dateCreated = new Date().getTime();
-const users = [];
-users.push(user);
-showNotification("A new user has been successfully added", "success");
+  console.log("tableBody :>> ", tableBody);
+
+  let usersTable = tableStartingCode + tableHead + tableBody + tableEndingCode;
+  showOutput(usersTable);
+}
+function consoleUsers() {
+  console.log(users);
+}
