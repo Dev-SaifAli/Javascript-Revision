@@ -1,33 +1,33 @@
 // Inside object data type semicolon ; used nahi hoga only comma, then next key value pair
 
-let user = {
-  firstName: "Saif",
-  lastName: "Ali",
-  city: "Faisalabad",
-  country: "Pakistan",
-  age: 21,
-  location: {
-    longitude: 2654.454,
-    latitude: 1545.154,
-  },
-  fullName: function () {
-    // function inside the user is called object.
-    return this.firstName + " " + this.lastName;
-  },
-};
-console.log("user :>> ", user);
+// let user = {
+//   firstName: "Saif",
+//   lastName: "Ali",
+//   city: "Faisalabad",
+//   country: "Pakistan",
+//   age: 21,
+//   location: {
+//     longitude: 2654.454,
+//     latitude: 1545.154,
+//   },
+//   fullName: function () {
+//     // function inside the user is called object.
+//     return this.firstName + " " + this.lastName;
+//   },
+// };
+// console.log("user :>> ", user);
 
-const users1 = [];
-users1.push(user);
-console.log("users1 :>> ", users1);
+// const users1 = [];
+// users1.push(user);
+// console.log("users1 :>> ", users1);
 
-console.log("user :>> ", user.location.latitude);
-console.log("user :>> ", user["location"]["latitude"]);
+// console.log("user :>> ", user.location.latitude);
+// console.log("user :>> ", user["location"]["latitude"]);
 
 let askedFromUser = "lastName"; // variable declare
-console.log("user :>> ", user.askedFromUser); // check if there is any askedFromUser property name exist in user object
-console.log("user :>> ", user["askedFromUser"]); // same if we used variable name in string - check property name
-console.log("user:>>", user[askedFromUser]); // check value of the variable
+// console.log("user :>> ", user.askedFromUser); // check if there is any askedFromUser property name exist in user object
+// console.log("user :>> ", user["askedFromUser"]); // same if we used variable name in string - check property name
+// console.log("user:>>", user[askedFromUser]); // check value of the variable
 
 let shop = {
   name: "Ali Store",
@@ -79,7 +79,7 @@ names.forEach((value, index) => {
 // forEach method array
 // parameters that fetch values from the array such as 1st param is actual value , 2nd is the index, and the 3rd is complete array
 
-console.log("user.fullName :>> ", user.fullName());
+// console.log("user.fullName :>> ", user.fullName());
 
 // Show Output
 function showOutput(output) {
@@ -93,7 +93,16 @@ function clearOutput() {
 
 // Notification
 
-function showNotification(message) {
+function showNotification(message, type) {
+  let bgColor;
+  switch (type) {
+    case "success":
+      bgColor = "linear-gradient(to right, #00b09b, #96c93d)";
+      break;
+    case "error":
+      bgColor = "linear-gradient(to right, #b03500ff, #c98c3dff)";
+      break;
+  }
   Toastify({
     text: message,
     duration: 3000,
@@ -103,9 +112,7 @@ function showNotification(message) {
     gravity: "bottom", // `top` or `bottom`
     position: "left", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
+    style: { background: bgColor },
     onClick: function () {}, // Callback after click
   }).showToast();
 }
@@ -115,7 +122,14 @@ function showNotification(message) {
 let getFieldValue = (ID) => {
   return document.getElementById(ID).value;
 };
+
+// email regex
 const emailFormat = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+// random ID
+const getRandomID = () => {
+  return Math.random().toString(36).slice(2);
+};
 
 function handleSubmit() {
   event.preventDefault();
@@ -143,3 +157,23 @@ function handleSubmit() {
     showNotification("Please enter your date of birth", "error");
   }
 }
+
+// let user = {
+//   firstName: firstName,
+//   lastName: lastName,
+//   email: email,
+//   dob: dob,
+// };
+// if property name has same name as variable name, we use only property name it can fetch and store values from that same name variable
+let user = {
+  firstName,
+  lastName,
+  email,
+  dob,
+};
+
+user.id = getRandomID();
+user.dateCreated = new Date().getTime();
+const users = [];
+users.push(user);
+showNotification("A new user has been successfully added", "success");
