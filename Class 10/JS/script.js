@@ -179,6 +179,12 @@ function handleSubmit() {
 
   user.id = getRandomID();
   user.dateCreated = new Date().getTime();
+  user.age = function () {
+    let userDOB = new Date(this.dob);
+    let currentDate = new Date();
+    let ageDifference = currentDate.getFullYear() - userDOB.getFullYear();
+    return ageDifference;
+  };
 
   users.push(user);
   showNotification("A new user has been successfully added", "success");
@@ -198,7 +204,7 @@ function showTable() {
       users[i].firstName
     }</td><td>${users[i].lastName}</td><td>${users[i].email}</td><td>${
       users[i].dob
-    }</td><td>$users[i].age</td></tr></tbody>`;
+    }</td><td>${users[i].age()}</td></tr></tbody>`;
   }
 
   console.log("tableBody :>> ", tableBody);
