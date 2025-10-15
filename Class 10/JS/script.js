@@ -215,3 +215,11 @@ function showTable() {
 function consoleUsers() {
   console.log(users);
 }
+
+let pos = {
+  billID: 12345,
+  posID: 54321,
+  name: "Ali",
+};
+
+console.log(pos['billID']);

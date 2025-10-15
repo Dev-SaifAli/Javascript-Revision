@@ -1,22 +1,20 @@
-// const users = [];
-const handleCreate = () => {
-  let user = document.getElementById("userName").value;
-  const users = localStorage.getItem("users") || [];
+// user store in local storage in the form of array
 
-//   users.push(user);
-  localStorage.setItem("users", users);
-  console.log("user is added successfully!🎉");
+const handleCreate = () => {
+  let user = document.getElementById("userName").value; // string form mai value a gai
+  let users = localStorage.getItem("users") || []; // creates array if 1st is null
+  if (users == null) {
+    users.push(user);
+  }
+
+  users.push(user);
+
+  localStorage.setItem("users", JSON.stringify(users));
+  console.log("user added successfully", typeof users);
 };
 
 const handleRead = () => {
-  let users = localStorage.getItem("users");
-  console.log(users, typeof users);
-
-  //   console.log("users :>> ", users);
-};
-
-const handleUpdate = () => {
-  localStorage.setItem("users");
+  return localStorage.getItem("users");
 };
 
 const handleDelete = () => {
